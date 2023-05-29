@@ -54,7 +54,7 @@ FOREIGN KEY([TeacherID])
 REFERENCES [dbo].[Teacher] ([Id])
 
 --List all possible combinations of Courses names and AchievementType names that can be passed by student.
-Select act.Name as AchievementType, s.FirstName + ' ' + s.LastName as StudentName,c.Name as CourseName, g.Grade from GradeDetails gd
+SELECT act.Name AS AchievementType, s.FirstName + ' ' + s.LastName AS StudentName,c.Name AS CourseName, g.Grade FROM GradeDetails gd
 LEFT JOIN AchievementType act ON gd.AchievementTypeID = act.ID
 LEFT JOIN Grade g ON gd.GradeID = g.ID
 LEFT JOIN Student s ON g.StudentID = s.ID
